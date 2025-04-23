@@ -4,11 +4,11 @@ import { isPangram } from "./isPangram"
 describe("isPangram", () => {
   const baseLetters = ["l", "t", "d", "u", "c", "i", "e"]
 
-  test("accepts valid pangram", () => {
+  test("accepts a valid pangram using all 7 letters", () => {
     expect(isPangram("ductile", baseLetters)).toBe(true)
   })
 
-  test("rejects invalid pangram", () => {
-    expect(isPangram("cuticle", baseLetters)).toBe(false)
+  test("rejects a word that is missing letters", () => {
+    expect(isPangram("title", baseLetters)).toBe(false)
   })
 })
