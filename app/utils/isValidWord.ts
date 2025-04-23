@@ -16,9 +16,9 @@ export const isValidWord = (
     return { isValid: false, message: "Missing center letter" }
   }
 
-  if (dictionary[word] === true) {
-    return { isValid: true }
-  } else {
+  if (!dictionary[word]) {
     return { isValid: false, message: "Not in word list" }
   }
+
+  return { isValid: true }
 }
