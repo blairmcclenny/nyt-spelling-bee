@@ -8,12 +8,12 @@ export const isValidWord = (
     return { isValid: false, message: "Too short" }
   }
 
-  if (![...word].every((letter) => letters.includes(letter))) {
-    return { isValid: false, message: "Bad letters" }
-  }
-
   if (!word.includes(centerLetter)) {
     return { isValid: false, message: "Missing center letter" }
+  }
+
+  if (![...word].every((letter) => letters.includes(letter))) {
+    return { isValid: false, message: "Bad letters" }
   }
 
   if (!dictionary[word]) {
