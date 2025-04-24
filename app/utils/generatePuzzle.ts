@@ -20,8 +20,8 @@ export const generatePuzzle = (
     const letters = shuffle(alphabet).slice(0, 7)
     const centerLetter = letters[Math.floor(Math.random() * 7)]
 
-    const validWords = allWords.filter((word) =>
-      isWordFromLetters(word, letters, centerLetter)
+    const validWords = allWords.filter(
+      (word) => isWordFromLetters(word, letters, centerLetter).isValid
     )
 
     const pangrams = validWords.filter((word) => isPangram(word, letters))
