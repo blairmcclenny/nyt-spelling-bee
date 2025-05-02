@@ -19,7 +19,7 @@ function Cell({
   onClick: () => void
 }) {
   const positions = {
-    center: null,
+    center: "",
     topLeft: "-translate-x-3/4 -translate-y-1/2",
     top: "-translate-y-full",
     topRight: "translate-x-3/4 -translate-y-1/2",
