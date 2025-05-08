@@ -1,11 +1,14 @@
-import LetterGrid from "./components/LetterGrid"
+import type { Dictionary } from "@/app/types"
+import LetterGrid from "@/app/components/LetterGrid"
+import dictionary from "@/app/data/filteredWords.json"
+import { getTodayPuzzle } from "@/app/utils/puzzleService"
 
 export default function Home() {
-  const letters = ["l", "t", "d", "u", "c", "i", "e"]
+  const puzzle = getTodayPuzzle(dictionary as Dictionary)
 
   return (
     <div className="mx-auto max-w-64">
-      <LetterGrid letters={letters} />
+      <LetterGrid letters={puzzle.letters} />
     </div>
   )
 }
